@@ -53,7 +53,7 @@ if not IS_HEROKU_APP:
 if IS_HEROKU_APP:
     ALLOWED_HOSTS = ["*"]
 else:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
