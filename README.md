@@ -19,6 +19,8 @@ http://localhost:8000/api/token/
 ```
 Для использования этого пользователя включите токен в заголовок Authorization: Token <ваш_токен>
 
+> Также был добавлен пользователь без привелегии администратора, username: janedoe, password: Pass123!
+
 ### Посты
 #### Получение Постов
 Endpoint: http://localhost:8000/api/posts/ (GET)
