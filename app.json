@@ -1,0 +1,20 @@
+{
+  "name": "Blog REST API",
+  "description": "A blog api deployed to Heroku",
+  "image": "heroku/python",
+  "repository": "https://github.com/ab-dauletkhan/blogAPI",
+  "keywords": ["python", "django"],
+  "env": {
+    "DJANGO_SECRET_KEY": {
+      "description": "The secret key for the Django application.",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "./manage.py test --debug-mode"
+      }
+    }
+  }
+}
