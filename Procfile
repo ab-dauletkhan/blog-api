@@ -4,5 +4,5 @@ web: gunicorn core.wsgi
 # migrations are run as part of app deployment, using Heroku's Release Phase feature:
 # https://docs.djangoproject.com/en/5.0/topics/migrations/
 # https://devcenter.heroku.com/articles/release-phase
-release: ./manage.py makemigrations --no-input
-release: ./manage.py migrate --no-input
+release: ./manage.py makemigrations
+release: ./manage.py migrate
