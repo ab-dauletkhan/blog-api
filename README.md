@@ -34,9 +34,11 @@ Endpoint: http://localhost:8000/api/posts/ (POST)
 ```json
 {
 	"title": "Заголовок поста",
+	"author": <author_id>,
 	"content": "Это содержание нового поста"
 }
 ```
+> Важно писать author_id без кавычек
 
 #### Детали Поста
 Endpoint: http://localhost:8000/api/posts/id/ (GET, PUT, PATCH, DELETE)
