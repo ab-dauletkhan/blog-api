@@ -3,15 +3,10 @@ from .models import Post, Comment
 from .serializers import PostSerializer, CommentSerializer, UserSerializer
 from .permissions import IsAuthorOrReadOnly
 
-
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny
-
-class UserViewSet(ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 
 
 class PostViewSet(ModelViewSet):
@@ -36,6 +31,9 @@ class CommentViewSet(ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = [IsAuthorOrReadOnly]
+
+    def get_queryset(self):
+            return Comment.objects.filter(post=self.kwargs['post_pk'])
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
